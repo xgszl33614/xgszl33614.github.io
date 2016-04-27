@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <title>W3C标准——containing-block(包含块）,定位学习 | Hello World</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="一.containing-block定义
+初始包含块： viewport（浏览器视口）。
+html：包含块为viewport。
+body元素：包含块为html。
+任何元素都有4中定位方式：static（默认）、relative、absolute、fixed。
+元素定位为static或者relative时，包含块为最近的形成块框的元素。子元素以包含元素的content-edge（内容框）定位(见sp">
+<meta property="og:type" content="article">
+<meta property="og:title" content="W3C标准——containing-block(包含块）,定位学习">
+<meta property="og:url" content="http://github.com/xgszl33614/2015/04/10/W3C标准——containing-block-包含块）-定位学习/index.html">
+<meta property="og:site_name" content="Hello World">
+<meta property="og:description" content="一.containing-block定义
+初始包含块： viewport（浏览器视口）。
+html：包含块为viewport。
+body元素：包含块为html。
+任何元素都有4中定位方式：static（默认）、relative、absolute、fixed。
+元素定位为static或者relative时，包含块为最近的形成块框的元素。子元素以包含元素的content-edge（内容框）定位(见sp">
+<meta property="og:updated_time" content="2016-04-27T12:28:19.859Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="W3C标准——containing-block(包含块）,定位学习">
+<meta name="twitter:description" content="一.containing-block定义
+初始包含块： viewport（浏览器视口）。
+html：包含块为viewport。
+body元素：包含块为html。
+任何元素都有4中定位方式：static（默认）、relative、absolute、fixed。
+元素定位为static或者relative时，包含块为最近的形成块框的元素。子元素以包含元素的content-edge（内容框）定位(见sp">
+  
+    <link rel="alternative" href="/atom.xml" title="Hello World" type="application/atom+xml">
+  
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="https://github.com/xgszl33614/xgszl33614.github.io/tree/master/img/logo.png" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">Xgszl</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">努力奉献</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>Menu</li>
+						<li>Tags</li>
+						
+						
+						<li>About</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/xgszl33614" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/2177109233" title="weibo">weibo</a>
+					        
+								<a class="rss" target="_blank" href="#" title="rss">rss</a>
+					        
+								<a class="zhihu" target="_blank" href="#" title="zhihu">zhihu</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/js/" style="font-size: 20px;">js</a>
+					</div>
+				</section>
+				
+				
+				
+
+				
+				
+				<section class="switch-part switch-part3">
+				
+					<div id="js-aboutme">这是一个沉淀自己的地方</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">Xgszl</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+			
+				<img lazy-src="https://github.com/xgszl33614/xgszl33614.github.io/tree/master/img/logo.png" class="js-avatar">
+			
+			</div>
+			<hgroup>
+			  <h1 class="header-author">Xgszl</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">努力奉献</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/xgszl33614" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/2177109233" title="weibo">weibo</a>
+			        
+						<a class="rss" target="_blank" href="#" title="rss">rss</a>
+			        
+						<a class="zhihu" target="_blank" href="#" title="zhihu">zhihu</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap"><article id="post-W3C标准——containing-block-包含块）-定位学习" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/04/10/W3C标准——containing-block-包含块）-定位学习/" class="article-date">
+  	<time datetime="2015-04-10T08:31:59.000Z" itemprop="datePublished">2015-04-10</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      W3C标准——containing-block(包含块）,定位学习
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/">css</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="一-containing-block定义"><a href="#一-containing-block定义" class="headerlink" title="一.containing-block定义"></a>一.containing-block定义</h2><ul>
+<li>初始包含块： viewport（浏览器视口）。</li>
+<li>html：包含块为viewport。</li>
+<li>body元素：包含块为html。</li>
+<li>任何元素都有4中定位方式：static（默认）、relative、absolute、fixed。<ul>
+<li>元素定位为static或者relative时，包含块为最近的形成块框的元素。子元素以包含元素的content-edge（内容框）定位(见span1）。</li>
+<li>元素定位为fixed时，包含块为初始包含块（见test1)。</li>
+<li>元素定位为absolute时，包含块为最近的非static定位祖先元素。子元素都以祖先元素的padding-edge（内边距框）定位（见test2）。如果祖先元素为inline元素，以包含第一个inline-box（行内框）以及最后一个inline-box的padding-edge定位（见test3）。如果inline元素包含多个line box(行框)，标准未定义，可以自行测试各个浏览器。关于inline-box，line-box，见inline formatting context.</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"utf-8"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">title</span>&gt;</span>study<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">"text/css"</span>&gt;</span><span class="undefined"></span><br><span class="line">  *&#123;</span><br><span class="line">    margin: 0;</span><br><span class="line">    padding: 0;</span><br><span class="line">  &#125;</span><br><span class="line">  html&#123;</span><br><span class="line">    background: white;</span><br><span class="line">    padding: 100px;</span><br><span class="line">  &#125;</span><br><span class="line">  body&#123;</span><br><span class="line">    margin: 30px;</span><br><span class="line">    padding: 50px;</span><br><span class="line">    border: 1px solid red;</span><br><span class="line">    background: #B9E3F5;</span><br><span class="line">  &#125;</span><br><span class="line">  .add-content&#123;</span><br><span class="line">    position: relative;</span><br><span class="line">  &#125;</span><br><span class="line">  .add-content:before&#123;</span><br><span class="line">    content: attr(name);</span><br><span class="line">    position: absolute;</span><br><span class="line">    left: 10px;</span><br><span class="line">    top: -10px;</span><br><span class="line">    padding: 4px 10px;</span><br><span class="line">    color: #fff;</span><br><span class="line">    background: #35B7F1;</span><br><span class="line">  &#125;</span><br><span class="line">  .add-content:after&#123;</span><br><span class="line">    content: "";</span><br><span class="line">    position: absolute;</span><br><span class="line">    left: 2;</span><br><span class="line">    top: -9px;</span><br><span class="line">    border: 4px solid transparent;</span><br><span class="line">    border-right: 4px solid #0F98D6;</span><br><span class="line">    border-bottom: 4px solid #0F98D6;</span><br><span class="line">  &#125;</span><br><span class="line">  div&#123;</span><br><span class="line">    width: 100px;</span><br><span class="line">    height: 40px;</span><br><span class="line">    border: 1px solid black;</span><br><span class="line">  &#125;</span><br><span class="line">  .span1&#123;</span><br><span class="line">    position:relative;</span><br><span class="line">    top:0;</span><br><span class="line">    left:300px;</span><br><span class="line">    padding: 30px;</span><br><span class="line">    border: 1px solid pink;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  .test1&#123;</span><br><span class="line">    position: fixed;</span><br><span class="line">    top: 20px;</span><br><span class="line">    left: 20px;</span><br><span class="line">  &#125;</span><br><span class="line">  .test2, .test3&#123;</span><br><span class="line">    position: absolute;</span><br><span class="line">    top: 30px;</span><br><span class="line">    left: 30px;</span><br><span class="line">  &#125;</span><br><span class="line"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span> <span class="attr">class</span>=<span class="string">"add-content"</span><span class="attr">name</span>=<span class="string">"body"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"test1 add-content"</span><span class="attr">name</span>=<span class="string">"test1"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"test2 add-content"</span><span class="attr">name</span>=<span class="string">"test2"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"span1 add-content"</span><span class="attr">name</span>=<span class="string">"span1"</span>&gt;</span>span wordspan wordspan</span><br><span class="line">     <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"test3 add-content"</span><span class="attr">name</span>=<span class="string">"test3"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2015/04/11/W3C标准——float，clear/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+           W3C标准——float，clear 
+        
+      </div>
+    </a>
+  
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share_jia">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">Share to: &nbsp; </span>
+		<a class="jiathis_button_facebook"></a> 
+    <a class="jiathis_button_twitter"></a>
+    <a class="jiathis_button_plus"></a> 
+    <a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="W3C标准——containing-block-包含块）-定位学习" data-title="W3C标准——containing-block(包含块）,定位学习" data-url="http://github.com/xgszl33614/2015/04/10/W3C标准——containing-block-包含块）-定位学习/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2016 Xgszl
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>

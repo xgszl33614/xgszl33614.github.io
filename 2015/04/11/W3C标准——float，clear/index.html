@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <title> W3C标准——float，clear  | Hello World</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="一.浮动规则规则1.浮动可应用于所有元素，除了定位为absolute，fixed的元素（毕竟他们更强势）。规则2.浮动是浮动元素的margin box（外边距框,以下简称外部框（以outer-edge译）。border框为边框）以包含块（包含块只与元素定位有关,见W3C标准——containing block学习）的content box（内容框）定位。
+123456789101112131415">
+<meta property="og:type" content="article">
+<meta property="og:title" content=" W3C标准——float，clear ">
+<meta property="og:url" content="http://github.com/xgszl33614/2015/04/11/W3C标准——float，clear/index.html">
+<meta property="og:site_name" content="Hello World">
+<meta property="og:description" content="一.浮动规则规则1.浮动可应用于所有元素，除了定位为absolute，fixed的元素（毕竟他们更强势）。规则2.浮动是浮动元素的margin box（外边距框,以下简称外部框（以outer-edge译）。border框为边框）以包含块（包含块只与元素定位有关,见W3C标准——containing block学习）的content box（内容框）定位。
+123456789101112131415">
+<meta property="og:updated_time" content="2016-04-27T12:27:34.995Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content=" W3C标准——float，clear ">
+<meta name="twitter:description" content="一.浮动规则规则1.浮动可应用于所有元素，除了定位为absolute，fixed的元素（毕竟他们更强势）。规则2.浮动是浮动元素的margin box（外边距框,以下简称外部框（以outer-edge译）。border框为边框）以包含块（包含块只与元素定位有关,见W3C标准——containing block学习）的content box（内容框）定位。
+123456789101112131415">
+  
+    <link rel="alternative" href="/atom.xml" title="Hello World" type="application/atom+xml">
+  
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="https://github.com/xgszl33614/xgszl33614.github.io/tree/master/img/logo.png" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">Xgszl</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">努力奉献</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>Menu</li>
+						<li>Tags</li>
+						
+						
+						<li>About</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/xgszl33614" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/2177109233" title="weibo">weibo</a>
+					        
+								<a class="rss" target="_blank" href="#" title="rss">rss</a>
+					        
+								<a class="zhihu" target="_blank" href="#" title="zhihu">zhihu</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/js/" style="font-size: 20px;">js</a>
+					</div>
+				</section>
+				
+				
+				
+
+				
+				
+				<section class="switch-part switch-part3">
+				
+					<div id="js-aboutme">这是一个沉淀自己的地方</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">Xgszl</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+			
+				<img lazy-src="https://github.com/xgszl33614/xgszl33614.github.io/tree/master/img/logo.png" class="js-avatar">
+			
+			</div>
+			<hgroup>
+			  <h1 class="header-author">Xgszl</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">努力奉献</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/xgszl33614" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/2177109233" title="weibo">weibo</a>
+			        
+						<a class="rss" target="_blank" href="#" title="rss">rss</a>
+			        
+						<a class="zhihu" target="_blank" href="#" title="zhihu">zhihu</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap"><article id="post-W3C标准——float，clear" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/04/11/W3C标准——float，clear/" class="article-date">
+  	<time datetime="2015-04-11T08:36:36.000Z" itemprop="datePublished">2015-04-11</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+       W3C标准——float，clear 
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/">css</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="一-浮动规则"><a href="#一-浮动规则" class="headerlink" title="一.浮动规则"></a>一.浮动规则</h2><p><code>规则1</code>.浮动可应用于所有元素，除了定位为absolute，fixed的元素（毕竟他们更强势）。<br><code>规则2</code>.浮动是浮动元素的margin box（外边距框,以下简称外部框（以outer-edge译）。border框为边框）以包含块（包含块只与元素定位有关,见W3C标准——containing block学习）的content box（内容框）定位。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"utf-8"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">title</span>&gt;</span>study<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">"text/css"</span>&gt;</span><span class="undefined"></span><br><span class="line">  *&#123;</span><br><span class="line">    margin: 0;</span><br><span class="line">    padding: 0;</span><br><span class="line">  &#125;</span><br><span class="line">  html&#123;</span><br><span class="line">    background: white;</span><br><span class="line">    padding: 100px;</span><br><span class="line">  &#125;</span><br><span class="line">  body&#123;</span><br><span class="line">    margin: 30px;</span><br><span class="line">    padding: 50px;</span><br><span class="line">    border: 1px solid red;</span><br><span class="line">    background: #B9E3F5;</span><br><span class="line">  &#125;</span><br><span class="line">  .add-content&#123;</span><br><span class="line">    position: relative;</span><br><span class="line">  &#125;</span><br><span class="line">  .add-content:before&#123;</span><br><span class="line">    content: attr(name);</span><br><span class="line">    position: absolute;</span><br><span class="line">    left: 10px;</span><br><span class="line">    top: -10px;</span><br><span class="line">    padding: 4px 10px;</span><br><span class="line">    color: #fff;</span><br><span class="line">    background: #35B7F1;</span><br><span class="line">  &#125;</span><br><span class="line">  .add-content:after&#123;</span><br><span class="line">    content: "";</span><br><span class="line">    position: absolute;</span><br><span class="line">    left: 2;</span><br><span class="line">    top: -9px;</span><br><span class="line">    border: 4px solid transparent;</span><br><span class="line">    border-right: 4px solid #0F98D6;</span><br><span class="line">    border-bottom: 4px solid #0F98D6;</span><br><span class="line">  &#125;</span><br><span class="line">  div&#123;</span><br><span class="line">    border: 1px solid red;</span><br><span class="line">    width: 300px;</span><br><span class="line">    height: 200px;</span><br><span class="line">    margin: 100px;</span><br><span class="line">  &#125;</span><br><span class="line">  .test1&#123;</span><br><span class="line">    float: left;</span><br><span class="line">  &#125;</span><br><span class="line"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span> <span class="attr">class</span>=<span class="string">"add-content"</span><span class="attr">name</span>=<span class="string">"body"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"test1 add-content"</span><span class="attr">name</span>=<span class="string">"test1"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><code>规则3</code>.浮动元素的外部框top边不能超过任何之前定义的块级元素的外部框bottom边（即使人家设置个宽度给你旁边留了很大的位置，也不能挤上去）。<br><code>规则4</code>.浮动元素的外部框top边不能超过任何之前定义的浮动元素的外部框top边。<br><code>规则5</code>.浮动元素的外部框top边不能超过任何之前定义的元素所产生的line box（行框）top边。<br><code>规则6</code>.两个浮动元素在同一行时，遵循不重叠原则，同时先定义的左浮动元素在后定义的左浮动元素的左边，右浮同理。两个左右浮动就更简单罗，左的左，右的右，同样不能重叠。<br><code>规则7</code>.两个浮动元素在同一行时，外部框之和不能大于包含块的宽度。否则，谁后定义谁挤到下一行去。（不过，可不要觉得单个浮动元素宽度超过包含块时就无处容身了，超过就超过了，可以接受滴）<br><code>规则8</code>.浮动元素必须被放置的尽可能的高。这是为了处理以下情况（见test3）。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"utf-8"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">title</span>&gt;</span>study<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">"text/css"</span>&gt;</span><span class="undefined"></span><br><span class="line">  *&#123;</span><br><span class="line">    margin: 0;</span><br><span class="line">    padding: 0;</span><br><span class="line">  &#125;</span><br><span class="line">  html&#123;</span><br><span class="line">    background: white;</span><br><span class="line">    padding: 100px;</span><br><span class="line">  &#125;</span><br><span class="line">  body&#123;</span><br><span class="line">    margin: 30px;</span><br><span class="line">    padding: 50px;</span><br><span class="line">    border: 1px solid red;</span><br><span class="line">    background: #B9E3F5;</span><br><span class="line">  &#125;</span><br><span class="line">  .add-content&#123;</span><br><span class="line">    position: relative;</span><br><span class="line">  &#125;</span><br><span class="line">  .add-content:before&#123;</span><br><span class="line">    content: attr(name);</span><br><span class="line">    position: absolute;</span><br><span class="line">    left: 10px;</span><br><span class="line">    top: -10px;</span><br><span class="line">    padding: 4px 10px;</span><br><span class="line">    color: #fff;</span><br><span class="line">    background: #35B7F1;</span><br><span class="line">  &#125;</span><br><span class="line">  .add-content:after&#123;</span><br><span class="line">    content: "";</span><br><span class="line">    position: absolute;</span><br><span class="line">    left: 2;</span><br><span class="line">    top: -9px;</span><br><span class="line">    border: 4px solid transparent;</span><br><span class="line">    border-right: 4px solid #0F98D6;</span><br><span class="line">    border-bottom: 4px solid #0F98D6;</span><br><span class="line">  &#125;</span><br><span class="line">  div&#123;</span><br><span class="line">    border: 1px solid red;</span><br><span class="line">    width: 300px;</span><br><span class="line">    height: 200px;</span><br><span class="line">  &#125;</span><br><span class="line">  .test1&#123;</span><br><span class="line">    float: left;</span><br><span class="line">  &#125;</span><br><span class="line">  .test2&#123;</span><br><span class="line">    float: right;</span><br><span class="line">    width: 500px;</span><br><span class="line">    height: 100px;</span><br><span class="line">  &#125;</span><br><span class="line">  .test3&#123;</span><br><span class="line">    float: left;</span><br><span class="line">  &#125;</span><br><span class="line"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span> <span class="attr">class</span>=<span class="string">"add-content"</span><span class="attr">name</span>=<span class="string">"body"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"test1 add-content"</span><span class="attr">name</span>=<span class="string">"test1"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"test2 add-content"</span><span class="attr">name</span>=<span class="string">"test2"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"test3 add-content"</span><span class="attr">name</span>=<span class="string">"test3"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p><code>规则9</code>.在保证尽可能高之后，就是保证左浮尽可能靠左，右浮尽可能靠右。10.看看负边距（margin）的影响。之前我们说过那么多规则，但如果我们给浮动元素加上负边距，似乎那些规则都不存在。不该覆盖的却覆盖了，说了不能超过top边的还是想超就超，甚至margin负的离谱点，可以轻松让浮动消失在视野内。其实很简单，这仅仅是对margin的理解，稍微了解点css的都能想通。可以这样理解负margin：margin-top：-10px;元素向上移了10px,但外部框却是向下移了10px的。见下例test3（test3看上去覆盖了之前的元素，但要知道外部框是在边框下10px,它还是很守规矩的）。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"utf-8"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">title</span>&gt;</span>study<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">"text/css"</span>&gt;</span><span class="undefined"></span><br><span class="line">  *&#123;</span><br><span class="line">    margin: 0;</span><br><span class="line">    padding: 0;</span><br><span class="line">  &#125;</span><br><span class="line">  html&#123;</span><br><span class="line">    background: white;</span><br><span class="line">    padding: 100px;</span><br><span class="line">  &#125;</span><br><span class="line">  body&#123;</span><br><span class="line">    margin: 30px;</span><br><span class="line">    padding: 50px;</span><br><span class="line">    border: 1px solid red;</span><br><span class="line">    background: #B9E3F5;</span><br><span class="line">  &#125;</span><br><span class="line">  .add-content&#123;</span><br><span class="line">    position: relative;</span><br><span class="line">  &#125;</span><br><span class="line">  .add-content:before&#123;</span><br><span class="line">    content: attr(name);</span><br><span class="line">    position: absolute;</span><br><span class="line">    left: 10px;</span><br><span class="line">    top: -10px;</span><br><span class="line">    padding: 4px 10px;</span><br><span class="line">    color: #fff;</span><br><span class="line">    background: #35B7F1;</span><br><span class="line">  &#125;</span><br><span class="line">  .add-content:after&#123;</span><br><span class="line">    content: "";</span><br><span class="line">    position: absolute;</span><br><span class="line">    left: 2;</span><br><span class="line">    top: -9px;</span><br><span class="line">    border: 4px solid transparent;</span><br><span class="line">    border-right: 4px solid #0F98D6;</span><br><span class="line">    border-bottom: 4px solid #0F98D6;</span><br><span class="line">  &#125;</span><br><span class="line">  div&#123;</span><br><span class="line">    border: 1px solid red;</span><br><span class="line">    width: 300px;</span><br><span class="line">    height: 200px;</span><br><span class="line">  &#125;</span><br><span class="line">  .test1&#123;</span><br><span class="line">    float: left;</span><br><span class="line">  &#125;</span><br><span class="line">  .test2&#123;</span><br><span class="line">    float: right;</span><br><span class="line">    width: 500px;</span><br><span class="line">    height: 100px;</span><br><span class="line">  &#125;</span><br><span class="line">  .test3&#123;</span><br><span class="line">    float: left;</span><br><span class="line">    margin-top:-10px;</span><br><span class="line">  &#125;</span><br><span class="line"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span> <span class="attr">class</span>=<span class="string">"add-content"</span><span class="attr">name</span>=<span class="string">"body"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"test1 add-content"</span><span class="attr">name</span>=<span class="string">"test1"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"test2 add-content"</span><span class="attr">name</span>=<span class="string">"test2"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"test3 add-content"</span><span class="attr">name</span>=<span class="string">"test3"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="二-浮动元素对之后元素的影响。"><a href="#二-浮动元素对之后元素的影响。" class="headerlink" title="二.浮动元素对之后元素的影响。"></a>二.浮动元素对之后元素的影响。</h2><ul>
+<li>最根本的表现当然是，它之后的inline-level box（不懂的话可以暂时理解会inline 元素）会被推到浮动元素外部框外（即包裹在附近）。</li>
+<li>如果之后是块级元素，后元素会当它不存在的去放置。不过，background和border会被遮住。后元素内部如有inline-level box,同样会被推到浮动元素外部框之外。另外重要的一点是，后元素的margin对于浮动元素来说可以忽视，因为是无效的（浮动元素之前的可是有效的，不要混淆）。所以要想将后元素推开，只能改变浮动元素margin值。当然也可以让后元素形成BFC（慢慢来。。）。</li>
+<li>浮动元素在两个块级元素之间时，margin collpse(外边距折叠）对浮动元素的影响。其实margin就是正常的折叠，不会互相影</li>
+</ul>
+<h2 id="三-浮动元素对之前元素的影响。"><a href="#三-浮动元素对之前元素的影响。" class="headerlink" title="三.浮动元素对之前元素的影响。"></a>三.浮动元素对之前元素的影响。</h2><ul>
+<li>如果有直接相邻的inline-level box，那么会推到浮动元素外部框外。</li>
+<li>如果直接相邻块级元素，如果块级元素内部形成了inline-level box。通过负margin导致重叠时，会遮住块级元素的border和background，但inline-level box会正常显示（即不会被推到浮动元素外部框外，且在浮动元素border和background上方显示，如果浮动元素内部也有inline-level box，那就共存，虽然很杂乱）。见下例。</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"utf-8"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">title</span>&gt;</span>study<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">"text/css"</span>&gt;</span><span class="undefined"></span><br><span class="line">  *&#123;</span><br><span class="line">    margin: 0;</span><br><span class="line">    padding: 0;</span><br><span class="line">  &#125;</span><br><span class="line">  html&#123;</span><br><span class="line">    background: white;</span><br><span class="line">    padding: 100px;</span><br><span class="line">  &#125;</span><br><span class="line">  body&#123;</span><br><span class="line">    margin: 30px;</span><br><span class="line">    padding: 50px;</span><br><span class="line">    border: 1px solid red;</span><br><span class="line">    background: #B9E3F5;</span><br><span class="line">  &#125;</span><br><span class="line">  .add-content&#123;</span><br><span class="line">    position: relative;</span><br><span class="line">  &#125;</span><br><span class="line">  .add-content:before&#123;</span><br><span class="line">    content: attr(name);</span><br><span class="line">    position: absolute;</span><br><span class="line">    left: 10px;</span><br><span class="line">    top: -10px;</span><br><span class="line">    padding: 4px 10px;</span><br><span class="line">    color: #fff;</span><br><span class="line">    background: #35B7F1;</span><br><span class="line">  &#125;</span><br><span class="line">  .add-content:after&#123;</span><br><span class="line">    content: "";</span><br><span class="line">    position: absolute;</span><br><span class="line">    left: 2;</span><br><span class="line">    top: -9px;</span><br><span class="line">    border: 4px solid transparent;</span><br><span class="line">    border-right: 4px solid #0F98D6;</span><br><span class="line">    border-bottom: 4px solid #0F98D6;</span><br><span class="line">  &#125;</span><br><span class="line">  div&#123;</span><br><span class="line">    margin: 20px;</span><br><span class="line">    background: yellow;</span><br><span class="line">  &#125;</span><br><span class="line">  .test1&#123;</span><br><span class="line">    float: left;</span><br><span class="line">    margin: -40px 0 0 200px;</span><br><span class="line">    width: 100px;</span><br><span class="line">    height: 100px;</span><br><span class="line">    border: 1px solid red;</span><br><span class="line">    background: aqua;</span><br><span class="line">  &#125;</span><br><span class="line"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span> <span class="attr">class</span>=<span class="string">"add-content"</span><span class="attr">name</span>=<span class="string">"body"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span>wgtwtwo owjtowjotjwoietojwietwj oewjoti wotejwoeijt woetoiw jtowtj <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"test1"</span>&gt;</span>aaaaaaa<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span>wgtwtwo owjtowjotjwoietojwietwj oewjoti wotejwoeijt woetoiw jtowtj <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="四-clear规则"><a href="#四-clear规则" class="headerlink" title="四.clear规则"></a>四.clear规则</h2><ul>
+<li>clear只能应用于块级元素（以下称清除元素）。</li>
+<li>clear用于清除清除元素之前出现的浮动元素。</li>
+<li><p>left：规定清除元素左边不能有左浮动元素；right：规定清除元素右边不能有右浮动元素。（比如clear：left清除元素，清除元素右边出现左浮或者右浮都是可以的，清除元素左边出现右浮元素也是可以的）</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"utf-8"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">title</span>&gt;</span>study<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">"text/css"</span>&gt;</span><span class="undefined"></span><br><span class="line">  *&#123;</span><br><span class="line">    margin: 0;</span><br><span class="line">    padding: 0;</span><br><span class="line">  &#125;</span><br><span class="line">  html&#123;</span><br><span class="line">    background: white;</span><br><span class="line">    padding: 100px;</span><br><span class="line">  &#125;</span><br><span class="line">  body&#123;</span><br><span class="line">    margin: 30px;</span><br><span class="line">    padding: 50px;</span><br><span class="line">    border: 1px solid red;</span><br><span class="line">    background: #B9E3F5;</span><br><span class="line">  &#125;</span><br><span class="line">  .add-content&#123;</span><br><span class="line">    position: relative;</span><br><span class="line">  &#125;</span><br><span class="line">  .add-content:before&#123;</span><br><span class="line">    content: attr(name);</span><br><span class="line">    position: absolute;</span><br><span class="line">    left: 10px;</span><br><span class="line">    top: -10px;</span><br><span class="line">    padding: 4px 10px;</span><br><span class="line">    color: #fff;</span><br><span class="line">    background: #35B7F1;</span><br><span class="line">  &#125;</span><br><span class="line">  .add-content:after&#123;</span><br><span class="line">    content: "";</span><br><span class="line">    position: absolute;</span><br><span class="line">    left: 2;</span><br><span class="line">    top: -9px;</span><br><span class="line">    border: 4px solid transparent;</span><br><span class="line">    border-right: 4px solid #0F98D6;</span><br><span class="line">    border-bottom: 4px solid #0F98D6;</span><br><span class="line">  &#125;</span><br><span class="line">  div&#123;</span><br><span class="line">    background: yellow;</span><br><span class="line">  &#125;</span><br><span class="line">  .test1&#123;</span><br><span class="line">    float: right;</span><br><span class="line">    margin: -20px 0 0 200px;</span><br><span class="line">    width: 100px;</span><br><span class="line">    height: 100px;</span><br><span class="line">    border: 1px solid red;</span><br><span class="line">    background: aqua;</span><br><span class="line">  &#125;</span><br><span class="line">  .test2&#123;</span><br><span class="line">    float: left;</span><br><span class="line">    margin: 30px 0 0 400px;</span><br><span class="line">    width: 100px;</span><br><span class="line">    height: 100px;</span><br><span class="line">    border: 1px solid red;</span><br><span class="line">    background: aqua;</span><br><span class="line">  &#125;</span><br><span class="line">  .test3&#123;</span><br><span class="line">    float: left;</span><br><span class="line">    margin-top: 30px;</span><br><span class="line">    width: 100px;</span><br><span class="line">    height: 100px;</span><br><span class="line">    border: 1px solid red;</span><br><span class="line">    background: aqua;</span><br><span class="line">  &#125;</span><br><span class="line">  .cf&#123;</span><br><span class="line">    width: 100px;</span><br><span class="line">    height: 100px;</span><br><span class="line">    border: 1px solid red;</span><br><span class="line">    clear: right;</span><br><span class="line">    margin-left: 200px;</span><br><span class="line">  &#125;</span><br><span class="line"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span> <span class="attr">class</span>=<span class="string">"add-content"</span><span class="attr">name</span>=<span class="string">"body"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">  wgwegj owjeg wgwegj owjeg wgwegj owjeg wgwegj owjeg wgwegj owjeg wgwegj owjeg wgwegj owjeg wgwegj owjeg wgwegj owjeg wgwegj owjeg wgwegj owjegwgwegj owjeg wgwegj owjeg wgwegj owjeg wgwegj owjeg wgwegj owjeg wgwegj owjeg wgwegj owjeg</span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"test1 add-content"</span><span class="attr">name</span>=<span class="string">"test1"</span>&gt;</span>aaaaaaa<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"test3 add-content"</span><span class="attr">name</span>=<span class="string">"test3"</span>&gt;</span>ccccc<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"test2 add-content"</span><span class="attr">name</span>=<span class="string">"test2"</span>&gt;</span>bbbbb<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  wgwegj owjeg wgwegj owjeg wgwegj owjeg wgwegj owjeg wgw</span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"cf add-content"</span><span class="attr">name</span>=<span class="string">"cf"</span>&gt;</span>为什么这段文字会被推下去，还未看到相关规范有解释<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>清除元素左边，右边的理解：<br>是指清除元素的border-top的位置必须得低于浮动元素的外部框bottom边。实现：浏览器会在清除元素上方加一段clearance空白区域，计算推理过程见官方文档clearance（css2.2,目前和css2.1差不多，虽然状态是editor’s draft,但都是官方标准）。推理结果就是：clearance的高度等于浮动元素的外部框高度减去清除元素的margin-top。clearance的值可为0和负值。</p>
+</li>
+</ul>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2015/04/12/W3C标准——CSSOM-View-Module/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          W3C标准——CSSOM View Module
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/04/10/W3C标准——containing-block-包含块）-定位学习/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">W3C标准——containing-block(包含块）,定位学习</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share_jia">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">Share to: &nbsp; </span>
+		<a class="jiathis_button_facebook"></a> 
+    <a class="jiathis_button_twitter"></a>
+    <a class="jiathis_button_plus"></a> 
+    <a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="W3C标准——float，clear" data-title=" W3C标准——float，clear " data-url="http://github.com/xgszl33614/2015/04/11/W3C标准——float，clear/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2016 Xgszl
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>

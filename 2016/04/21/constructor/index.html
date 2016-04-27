@@ -4,18 +4,21 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>Hello World</title>
+  <title>constructor | Hello World</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="layout: tagstitle: tags">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://github.com/xgszl33614/about/index.html">
+  <meta name="description" content="constructor1234var x = 3;x.constructor; // function Number () &amp;#123; &amp;#125; , 是一个函数typeof (x.constructor); // functionx.constructor == Number; // true
+为什么x会有constructor属性。因为每一个构造函数原型都会生成constructor属性，">
+<meta property="og:type" content="article">
+<meta property="og:title" content="constructor">
+<meta property="og:url" content="http://github.com/xgszl33614/2016/04/21/constructor/index.html">
 <meta property="og:site_name" content="Hello World">
-<meta property="og:description" content="layout: tagstitle: tags">
-<meta property="og:updated_time" content="2016-04-26T12:42:17.630Z">
+<meta property="og:description" content="constructor1234var x = 3;x.constructor; // function Number () &amp;#123; &amp;#125; , 是一个函数typeof (x.constructor); // functionx.constructor == Number; // true
+为什么x会有constructor属性。因为每一个构造函数原型都会生成constructor属性，">
+<meta property="og:updated_time" content="2016-04-27T11:26:53.282Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="layout: tagstitle: tags">
+<meta name="twitter:title" content="constructor">
+<meta name="twitter:description" content="constructor1234var x = 3;x.constructor; // function Number () &amp;#123; &amp;#125; , 是一个函数typeof (x.constructor); // functionx.constructor == Number; // true
+为什么x会有constructor属性。因为每一个构造函数原型都会生成constructor属性，">
   
     <link rel="alternative" href="/atom.xml" title="Hello World" type="application/atom+xml">
   
@@ -174,11 +177,11 @@
 	</div>
 </nav>
 
-      <div class="body-wrap"><article id="page-undefined" class="article article-type-page" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-constructor" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/about/index.html" class="article-date">
-  	<time datetime="2016-04-26T13:02:46.476Z" itemprop="datePublished">2016-04-26</time>
+      <a href="/2016/04/21/constructor/" class="article-date">
+  	<time datetime="2016-04-21T07:57:14.000Z" itemprop="datePublished">2016-04-21</time>
 </a>
     </div>
   
@@ -187,9 +190,36 @@
       <input type="hidden" class="isFancy" />
     
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      constructor
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
     <div class="article-entry" itemprop="articleBody">
       
-        <p>layout: tags<br>title: tags</p>
+        <h2 id="constructor-NaN"><a href="#constructor-NaN" class="headerlink" title="constructor"></a>constructor</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> x = <span class="number">3</span>;</span><br><span class="line">x.constructor; <span class="comment">// function Number () &#123; &#125; , 是一个函数</span></span><br><span class="line"><span class="keyword">typeof</span> (x.constructor); <span class="comment">// function</span></span><br><span class="line">x.constructor == <span class="built_in">Number</span>; <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+<p>为什么x会有constructor属性。因为每一个构造函数原型都会生成constructor属性，且这个属性指向构造函数。而实例对象是继承了原型的属性和方法的</p>
+<h2 id="用法：判断给定对象为什么类"><a href="#用法：判断给定对象为什么类" class="headerlink" title="用法：判断给定对象为什么类"></a>用法：判断给定对象为什么类</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">type</span>(<span class="params">x</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (x == <span class="literal">null</span>) <span class="keyword">return</span> <span class="string">""</span>; <span class="comment">//Null 和 undefined 没有构造函数</span></span><br><span class="line">    <span class="keyword">switch</span> (x.constructor) &#123;</span><br><span class="line">        <span class="keyword">case</span> <span class="built_in">Number</span>: <span class="keyword">return</span> <span class="string">"Number"</span>; <span class="comment">//处理原始类型</span></span><br><span class="line">        <span class="keyword">case</span> <span class="built_in">String</span>: <span class="keyword">return</span> <span class="string">"String"</span>; <span class="comment">//处理原始类型</span></span><br><span class="line">        <span class="keyword">case</span> <span class="built_in">Date</span>: <span class="keyword">return</span> <span class="string">"Date"</span>; <span class="comment">//处理内置类型</span></span><br><span class="line">        <span class="keyword">case</span> Complex: <span class="keyword">return</span> <span class="string">"Complex"</span>; <span class="comment">//处理自定义类型</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>不足<br>1.页面多个框架页面中，创建的两个数组继承自两个完全相同却相互独立的原型对象，因而其中一个框架页面中的数组对象不是另外一个框架页面中Array()构造函数的实例。（instanceof也如此)<br>2.此外，不是每个实例都有constructor属性，该属性是继承自原型对象，原型对象可能没有该属性。或者，实例原型更改后并没有指向正确的构造函数，导致不正确。</li>
+</ul>
 
       
     </div>
@@ -197,6 +227,25 @@
   </div>
   
     
+<nav id="article-nav">
+  
+    <a href="/2016/04/22/for-in/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          for in
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/04/21/prototype/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">prototype</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
   
 </article>
 
@@ -226,7 +275,7 @@
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="undefined" data-title="" data-url="http://github.com/xgszl33614/about/index.html"></div>
+	<div class="ds-thread" data-thread-key="constructor" data-title="constructor" data-url="http://github.com/xgszl33614/2016/04/21/constructor/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
@@ -270,7 +319,7 @@
 		mathjax: true,
 		animate: true,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,

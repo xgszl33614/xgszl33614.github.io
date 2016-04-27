@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <title>为什么可以用border制作小三角--原理探究 | Hello World</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="1.最简单的设置border，效果如下图：&amp;lt;内容宽高50px,边框宽度都为50px。2.如果只设置一边呢，如图：&amp;lt;，白色部分为内容，设置底边框为50px,内容红色框是截图效果。“？”区域都是没有颜色的3.在2的基础上，增加左边框颜色为transparent，效果如图：&amp;lt;。2,3的对比，也就是border-color:transarent与border:none的对比。规律总结：1">
+<meta property="og:type" content="article">
+<meta property="og:title" content="为什么可以用border制作小三角--原理探究">
+<meta property="og:url" content="http://github.com/xgszl33614/2015/04/14/为什么可以用border制作小三角-原理探究/index.html">
+<meta property="og:site_name" content="Hello World">
+<meta property="og:description" content="1.最简单的设置border，效果如下图：&amp;lt;内容宽高50px,边框宽度都为50px。2.如果只设置一边呢，如图：&amp;lt;，白色部分为内容，设置底边框为50px,内容红色框是截图效果。“？”区域都是没有颜色的3.在2的基础上，增加左边框颜色为transparent，效果如图：&amp;lt;。2,3的对比，也就是border-color:transarent与border:none的对比。规律总结：1">
+<meta property="og:updated_time" content="2016-04-27T12:21:38.787Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="为什么可以用border制作小三角--原理探究">
+<meta name="twitter:description" content="1.最简单的设置border，效果如下图：&amp;lt;内容宽高50px,边框宽度都为50px。2.如果只设置一边呢，如图：&amp;lt;，白色部分为内容，设置底边框为50px,内容红色框是截图效果。“？”区域都是没有颜色的3.在2的基础上，增加左边框颜色为transparent，效果如图：&amp;lt;。2,3的对比，也就是border-color:transarent与border:none的对比。规律总结：1">
+  
+    <link rel="alternative" href="/atom.xml" title="Hello World" type="application/atom+xml">
+  
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="https://github.com/xgszl33614/xgszl33614.github.io/tree/master/img/logo.png" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">Xgszl</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">努力奉献</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>Menu</li>
+						<li>Tags</li>
+						
+						
+						<li>About</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/xgszl33614" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/2177109233" title="weibo">weibo</a>
+					        
+								<a class="rss" target="_blank" href="#" title="rss">rss</a>
+					        
+								<a class="zhihu" target="_blank" href="#" title="zhihu">zhihu</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/js/" style="font-size: 20px;">js</a>
+					</div>
+				</section>
+				
+				
+				
+
+				
+				
+				<section class="switch-part switch-part3">
+				
+					<div id="js-aboutme">这是一个沉淀自己的地方</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">Xgszl</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+			
+				<img lazy-src="https://github.com/xgszl33614/xgszl33614.github.io/tree/master/img/logo.png" class="js-avatar">
+			
+			</div>
+			<hgroup>
+			  <h1 class="header-author">Xgszl</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">努力奉献</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/xgszl33614" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/2177109233" title="weibo">weibo</a>
+			        
+						<a class="rss" target="_blank" href="#" title="rss">rss</a>
+			        
+						<a class="zhihu" target="_blank" href="#" title="zhihu">zhihu</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap"><article id="post-为什么可以用border制作小三角-原理探究" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/04/14/为什么可以用border制作小三角-原理探究/" class="article-date">
+  	<time datetime="2015-04-14T08:38:05.000Z" itemprop="datePublished">2015-04-14</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      为什么可以用border制作小三角--原理探究
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/">css</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>1.最简单的设置border，效果如下图：&lt;<img src="" alt="">内容宽高50px,边框宽度都为50px。<br>2.如果只设置一边呢，如图：&lt;<img src="" alt="">，白色部分为内容，设置底边框为50px,内容红色框是截图效果。“？”区域都是没有颜色的<br>3.在2的基础上，增加左边框颜色为transparent，效果如图：&lt;<img src="" alt="">。2,3的对比，也就是border-color:transarent与border:none的对比。<br>规律总结：1.设置border-？（direction）：none会让该边消失，包括“？”部分；2.而设置border-？（direction）-color：transparent仅仅只是让该边透明，不影响“？”区域其他边的显示，在“？”区域各边是平分秋色的。<br>4.根据上面的规律，我们将border分成如下8块（元素宽高为0）：&lt;<img src="" alt="">。<br>5.想做什么效果呢，我们先写好规则，看究竟是不是自己想要的：width:0;height:0;maigin:0 auto;</p>
+<ul>
+<li>显示1+2：border:50px solid transparent;border-top:50px solid red;(见class a)</li>
+<li>显示3或6（8块都是两两一样，所以最简单的4中都有两种方式可以制作;还可以通过3,4,5,6组合大号的三角）：1.border-right:50px solid red;border-top:50px solid transparent;(见class b)2.border-bottom:50px solid red;border-left:50px solid transparent;(见class c)3.borde:50px solid transparent;border-bottom：50px solid red;border-right:50px solid red;(见class d)</li>
+<li>显示12,56（像个漏斗是吧）：5.borde:50px solid transparent;border-top：50px solid red; border-bottom:50px solid red;(见class e)</li>
+<li>显示2+4还不显示3+5？(显示2+4+6+8像风车)一个元素肯定是显示不了了，不过可以多个元素叠加嘛，具体不写了。让各条边框宽度不一等等。抛砖引玉，相信你们的创造力！<br>6.效果：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br></pre></td><td class="code"><pre><span class="line">&lt;!doctype html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;meta charset=&quot;utf-8&quot;&gt;</span><br><span class="line">&lt;title&gt;border制作小三角-详解&lt;/title&gt;</span><br><span class="line">&lt;style&gt;</span><br><span class="line">*&#123;</span><br><span class="line">        margin:0;</span><br><span class="line">        padding:0;</span><br><span class="line">&#125;</span><br><span class="line">body&#123;font: 14px/1.5 &quot;微软雅黑&quot;&#125;</span><br><span class="line">.add-content&#123;</span><br><span class="line">    position: relative;</span><br><span class="line">    width: 200px;</span><br><span class="line">    height: 200px;</span><br><span class="line">    margin: 30px auto;</span><br><span class="line">    border: 1px solid aqua;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">.add-content:before&#123;</span><br><span class="line">  content: attr(name);</span><br><span class="line">  position: absolute;</span><br><span class="line">  left: 10px;</span><br><span class="line">  top: -10px;</span><br><span class="line">  padding: 4px 10px;</span><br><span class="line">  color: #fff;</span><br><span class="line">  background: #35B7F1;</span><br><span class="line">  line-height: 1.5;</span><br><span class="line">  font-size: 16px;</span><br><span class="line">&#125;</span><br><span class="line">.add-content:after&#123;</span><br><span class="line">  content: &quot;&quot;;</span><br><span class="line">  position: absolute;</span><br><span class="line">  left: 2px;</span><br><span class="line">  top: -9px;</span><br><span class="line">  border: 4px solid transparent;</span><br><span class="line">  border-right: 4px solid #0F98D6;</span><br><span class="line">  border-bottom: 4px solid #0F98D6;</span><br><span class="line">&#125;</span><br><span class="line">.all&#123;</span><br><span class="line">  width: 0;</span><br><span class="line">  height: 0;</span><br><span class="line">  margin: 30px;</span><br><span class="line">&#125;</span><br><span class="line">.a&#123;</span><br><span class="line">  border:50px solid transparent;</span><br><span class="line">  border-top:50px solid red</span><br><span class="line">&#125;</span><br><span class="line">.b&#123;</span><br><span class="line">  border-right:50px solid red;</span><br><span class="line">  border-top:50px solid transparent</span><br><span class="line">&#125;</span><br><span class="line">.c&#123;</span><br><span class="line">  border-bottom:50px solid red;</span><br><span class="line">  border-left:50px solid transparent</span><br><span class="line">&#125;</span><br><span class="line">.d&#123;</span><br><span class="line">  border:50px solid transparent;</span><br><span class="line">  border-bottom:50px solid red;</span><br><span class="line">  border-right:50px solid red</span><br><span class="line">&#125;</span><br><span class="line">.e&#123;</span><br><span class="line">  border:50px solid transparent;</span><br><span class="line">  border-top:50px solid red;</span><br><span class="line">  border-bottom:50px solid red</span><br><span class="line">&#125;</span><br><span class="line">&lt;/style&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;div class=&quot;add-content&quot;name=&quot;class a&quot;&gt;</span><br><span class="line">  &lt;div class=&quot;a all&quot;&gt;&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;div class=&quot;add-content&quot;name=&quot;class b&quot;&gt;</span><br><span class="line">  &lt;div class=&quot;b all&quot;&gt;&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;div class=&quot;add-content&quot;name=&quot;class c&quot;&gt;</span><br><span class="line">  &lt;div class=&quot;c all&quot;&gt;&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;div class=&quot;add-content&quot;name=&quot;class d&quot;&gt;</span><br><span class="line">  &lt;div class=&quot;d all&quot;&gt;&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;div class=&quot;add-content&quot;name=&quot;class e&quot;&gt;</span><br><span class="line">  &lt;div class=&quot;e all&quot;&gt;&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2015/04/15/简单js，css实现列表无限循环/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          简单js，css实现列表无限循环
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/04/14/W3C标准——margin-collapse（外边距塌陷）/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">W3C标准——margin collapse（外边距塌陷）</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share_jia">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">Share to: &nbsp; </span>
+		<a class="jiathis_button_facebook"></a> 
+    <a class="jiathis_button_twitter"></a>
+    <a class="jiathis_button_plus"></a> 
+    <a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="为什么可以用border制作小三角-原理探究" data-title="为什么可以用border制作小三角--原理探究" data-url="http://github.com/xgszl33614/2015/04/14/为什么可以用border制作小三角-原理探究/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2016 Xgszl
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>

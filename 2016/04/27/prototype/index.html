@@ -4,23 +4,35 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>hexo post | Hello World</title>
+    <title>prototype | Hello World</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="Xgszl">
     
 
     
-    <meta name="description" content="hexo 使用">
+    <meta name="description" content="var a = new Object();
+Object, 即构造函数， 是函数。typeof Object == &amp;#39;function&amp;#39; ;//true
+Object.prototype, 即Object的原型， 是对象。typeof Object.prototype == &amp;#39;object&amp;#39;;//true
+
+只有函数才有prototype属性，prototype !">
 <meta property="og:type" content="article">
-<meta property="og:title" content="hexo post">
-<meta property="og:url" content="http://yoursite.com/2016/04/26/hexo-4/index.html">
+<meta property="og:title" content="prototype">
+<meta property="og:url" content="http://yoursite.com/2016/04/27/prototype/index.html">
 <meta property="og:site_name" content="Hello World">
-<meta property="og:description" content="hexo 使用">
-<meta property="og:updated_time" content="2016-04-26T13:40:05.544Z">
+<meta property="og:description" content="var a = new Object();
+Object, 即构造函数， 是函数。typeof Object == &amp;#39;function&amp;#39; ;//true
+Object.prototype, 即Object的原型， 是对象。typeof Object.prototype == &amp;#39;object&amp;#39;;//true
+
+只有函数才有prototype属性，prototype !">
+<meta property="og:updated_time" content="2016-04-27T07:56:35.303Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="hexo post">
-<meta name="twitter:description" content="hexo 使用">
+<meta name="twitter:title" content="prototype">
+<meta name="twitter:description" content="var a = new Object();
+Object, 即构造函数， 是函数。typeof Object == &amp;#39;function&amp;#39; ;//true
+Object.prototype, 即Object的原型， 是对象。typeof Object.prototype == &amp;#39;object&amp;#39;;//true
+
+只有函数才有prototype属性，prototype !">
 
     
     <link rel="alternative" href="/atom.xml" title="Hello World" type="application/atom+xml">
@@ -80,14 +92,14 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2016/04/26/hexo-4/" title="hexo post" itemprop="url">hexo post</a>
+      <a href="/2016/04/27/prototype/" title="prototype" itemprop="url">prototype</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="Xgszl" target="_blank" itemprop="author">Xgszl</a>
 		
   <p class="article-time">
-    <time datetime="2016-04-26T12:52:23.000Z" itemprop="datePublished"> 发表于 2016-04-26</time>
+    <time datetime="2016-04-27T07:42:20.000Z" itemprop="datePublished"> 发表于 2016-04-27</time>
     
   </p>
 </header>
@@ -96,11 +108,19 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#hexo-使用"><span class="toc-number">1.</span> <span class="toc-text">hexo 使用</span></a></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#var-a-new-Object"><span class="toc-number">1.</span> <span class="toc-text">var a = new Object();</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#只有函数才有prototype属性，prototype-原型"><span class="toc-number">2.</span> <span class="toc-text">只有函数才有prototype属性，prototype != 原型</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#proto"><span class="toc-number">3.</span> <span class="toc-text"> proto </span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#原型获取和设置"><span class="toc-number">4.</span> <span class="toc-text">原型获取和设置</span></a></li></ol>
 		
 		</div>
 		
-		<h1 id="hexo-使用"><a href="#hexo-使用" class="headerlink" title="hexo 使用"></a>hexo 使用</h1>  
+		<h1 id="var-a-new-Object"><a href="#var-a-new-Object" class="headerlink" title="var a = new Object();"></a><code>var a = new Object();</code></h1><ul>
+<li>Object, 即构造函数， 是函数。<code>typeof Object == &#39;function&#39; ;//true</code></li>
+<li>Object.prototype, 即Object的原型， 是对象。<code>typeof Object.prototype == &#39;object&#39;;//true</code></li>
+</ul>
+<h1 id="只有函数才有prototype属性，prototype-原型"><a href="#只有函数才有prototype属性，prototype-原型" class="headerlink" title="只有函数才有prototype属性，prototype != 原型"></a>只有函数才有prototype属性，prototype != 原型</h1><p>构造函数的prototype并不是构造函数的原型，只有Function.<strong>proto</strong>才能代表原型（Function.<strong>proto</strong>就是Function构造函数的原型),Function.prototype是用构造函数构造出来的实例对象的原型，</p>
+<p>原型构成了原型链，原型链的根就是Object.prototype。根的原型为null<br><code>Object.prototype.__proto__;//null</code></p>
+<h1 id="proto"><a href="#proto" class="headerlink" title=" proto "></a><strong> <em>proto</em> </strong></h1><p>实现了ecma-262中的 <code>[[Prototype]]</code> ,这是一个内置属性，不可操作，每个实例对象内部都有，指向该对象的原型。<br>通常不建议使用<strong>proto</strong>。只有一个地方建议：使用class（es6)时，直接定义<strong>proto</strong>属性。</p>
+<h1 id="原型获取和设置"><a href="#原型获取和设置" class="headerlink" title="原型获取和设置"></a>原型获取和设置</h1><p>可以使用Object.getPrototypeOf()和Object.setPrototypeOf()来获取和设置对象的原型。</p>
+  
 	</div>
 		<footer class="article-footer clearfix">
 <div class="article-catetags">
@@ -108,7 +128,7 @@
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/hexo/">hexo</a><a href="/tags/js/">js</a><a href="/tags/css/">css</a>
+  <span></span> <a href="/tags/js/">js</a>
   </div>
 
 </div>
@@ -117,7 +137,7 @@
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://yoursite.com/2016/04/26/hexo-4/" data-title="hexo post | Hello World" data-tsina="null" class="share clearfix">
+	  <div data-url="http://yoursite.com/2016/04/27/prototype/" data-title="prototype | Hello World" data-tsina="null" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -131,18 +151,18 @@
 <nav class="article-nav clearfix">
  
  <div class="prev" >
- <a href="/2016/04/26/hexo-3/" title="hexo post">
+ <a href="/2016/04/27/constructor/" title="constructor">
   <strong>上一篇：</strong><br/>
   <span>
-  hexo post</span>
+  constructor</span>
 </a>
 </div>
 
 
 <div class="next">
-<a href="/2016/04/26/hexo-5/"  title="hexo post">
+<a href="/2016/04/27/new-对象/"  title="new 对象">
  <strong>下一篇：</strong><br/> 
- <span>hexo post
+ <span>new 对象
 </span>
 </a>
 </div>
@@ -157,7 +177,7 @@
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
  
- <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#hexo-使用"><span class="toc-number">1.</span> <span class="toc-text">hexo 使用</span></a></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#var-a-new-Object"><span class="toc-number">1.</span> <span class="toc-text">var a = new Object();</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#只有函数才有prototype属性，prototype-原型"><span class="toc-number">2.</span> <span class="toc-text">只有函数才有prototype属性，prototype != 原型</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#proto"><span class="toc-number">3.</span> <span class="toc-text"> proto </span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#原型获取和设置"><span class="toc-number">4.</span> <span class="toc-text">原型获取和设置</span></a></li></ol>
  
   </div>
 
@@ -176,15 +196,11 @@
 		<ul class="clearfix">
 		
 			
-				<li><a href="/tags/hexo/" title="hexo">hexo<sup>5</sup></a></li>
-			
-		
-			
 				<li><a href="/tags/js/" title="js">js<sup>5</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/css/" title="css">css<sup>5</sup></a></li>
+				<li><a href="/tags/hexo/" title="hexo">hexo<sup>1</sup></a></li>
 			
 		
 		</ul>
@@ -229,7 +245,7 @@
 	 
 	<div class="social-font" class="clearfix">
 		
-		<a href="http://weibo.com/2176287895" target="_blank" class="icon-weibo" title="微博"></a>
+		<a href="http://weibo.com/2177109233" target="_blank" class="icon-weibo" title="微博"></a>
 		
 		
 		

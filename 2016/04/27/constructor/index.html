@@ -4,23 +4,26 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>hexo post | Hello World</title>
+    <title>constructor | Hello World</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="Xgszl">
     
 
     
-    <meta name="description" content="hexo 使用">
+    <meta name="description" content="constructor1234var x = 3;x.constructor ; // function Number () &amp;#123; &amp;#125; , 是一个函数typeof ( x.constructor ) ; // functionx.constructor == Number ; // true
+为什么x会有constructor属性。因为每一个构造函数原型都会生成construct">
 <meta property="og:type" content="article">
-<meta property="og:title" content="hexo post">
-<meta property="og:url" content="http://yoursite.com/2016/04/26/hexo-4/index.html">
+<meta property="og:title" content="constructor">
+<meta property="og:url" content="http://yoursite.com/2016/04/27/constructor/index.html">
 <meta property="og:site_name" content="Hello World">
-<meta property="og:description" content="hexo 使用">
-<meta property="og:updated_time" content="2016-04-26T13:40:05.544Z">
+<meta property="og:description" content="constructor1234var x = 3;x.constructor ; // function Number () &amp;#123; &amp;#125; , 是一个函数typeof ( x.constructor ) ; // functionx.constructor == Number ; // true
+为什么x会有constructor属性。因为每一个构造函数原型都会生成construct">
+<meta property="og:updated_time" content="2016-04-27T07:57:32.062Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="hexo post">
-<meta name="twitter:description" content="hexo 使用">
+<meta name="twitter:title" content="constructor">
+<meta name="twitter:description" content="constructor1234var x = 3;x.constructor ; // function Number () &amp;#123; &amp;#125; , 是一个函数typeof ( x.constructor ) ; // functionx.constructor == Number ; // true
+为什么x会有constructor属性。因为每一个构造函数原型都会生成construct">
 
     
     <link rel="alternative" href="/atom.xml" title="Hello World" type="application/atom+xml">
@@ -80,14 +83,14 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2016/04/26/hexo-4/" title="hexo post" itemprop="url">hexo post</a>
+      <a href="/2016/04/27/constructor/" title="constructor" itemprop="url">constructor</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="Xgszl" target="_blank" itemprop="author">Xgszl</a>
 		
   <p class="article-time">
-    <time datetime="2016-04-26T12:52:23.000Z" itemprop="datePublished"> 发表于 2016-04-26</time>
+    <time datetime="2016-04-27T07:57:14.000Z" itemprop="datePublished"> 发表于 2016-04-27</time>
     
   </p>
 </header>
@@ -96,11 +99,18 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#hexo-使用"><span class="toc-number">1.</span> <span class="toc-text">hexo 使用</span></a></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#constructor-NaN"><span class="toc-number">1.</span> <span class="toc-text">constructor</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#用法：判断给定对象为什么类"><span class="toc-number">2.</span> <span class="toc-text">用法：判断给定对象为什么类</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#不足"><span class="toc-number">2.0.1.</span> <span class="toc-text">不足</span></a></li></ol></li></ol></li></ol>
 		
 		</div>
 		
-		<h1 id="hexo-使用"><a href="#hexo-使用" class="headerlink" title="hexo 使用"></a>hexo 使用</h1>  
+		<h1 id="constructor-NaN"><a href="#constructor-NaN" class="headerlink" title="constructor"></a>constructor</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var x = 3;</span><br><span class="line">x.constructor ; // function Number () &#123; &#125; , 是一个函数</span><br><span class="line">typeof ( x.constructor ) ; // function</span><br><span class="line">x.constructor == Number ; // true</span><br></pre></td></tr></table></figure>
+<p>为什么x会有constructor属性。因为每一个构造函数原型都会生成constructor属性，且这个属性指向构造函数。而实例对象是继承了原型的属性和方法的</p>
+<h1 id="用法：判断给定对象为什么类"><a href="#用法：判断给定对象为什么类" class="headerlink" title="用法：判断给定对象为什么类"></a>用法：判断给定对象为什么类</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">function type(x) &#123;</span><br><span class="line">    if (x == null) return &quot;&quot;; //Null 和 undefined 没有构造函数</span><br><span class="line">    switch(x.constructor) &#123;</span><br><span class="line">        case Number: return &quot;Number&quot;; //处理原始类型</span><br><span class="line">        case String: return &quot;String&quot;; //处理原始类型</span><br><span class="line">        case Date: return &quot;Date&quot;;    //处理内置类型</span><br><span class="line">        case Complex: return &quot;Complex&quot;; //处理自定义类型</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="不足"><a href="#不足" class="headerlink" title="不足"></a>不足</h3><ul>
+<li>页面多个框架页面中，创建的两个数组继承自两个完全相同却相互独立的原型对象，因而其中一个框架页面中的数组对象不是另外一个框架页面中Array()构造函数的实例。（instanceof也如此)</li>
+<li>此外，不是每个实例都有constructor属性，该属性是继承自原型对象，原型对象可能没有该属性。或者，实例原型更改后并没有指向正确的构造函数，导致不正确。</li>
+</ul>
+  
 	</div>
 		<footer class="article-footer clearfix">
 <div class="article-catetags">
@@ -108,7 +118,7 @@
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/hexo/">hexo</a><a href="/tags/js/">js</a><a href="/tags/css/">css</a>
+  <span></span> <a href="/tags/js/">js</a>
   </div>
 
 </div>
@@ -117,7 +127,7 @@
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://yoursite.com/2016/04/26/hexo-4/" data-title="hexo post | Hello World" data-tsina="null" class="share clearfix">
+	  <div data-url="http://yoursite.com/2016/04/27/constructor/" data-title="constructor | Hello World" data-tsina="null" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -131,18 +141,18 @@
 <nav class="article-nav clearfix">
  
  <div class="prev" >
- <a href="/2016/04/26/hexo-3/" title="hexo post">
+ <a href="/2016/04/27/for-in/" title="for in">
   <strong>上一篇：</strong><br/>
   <span>
-  hexo post</span>
+  for in</span>
 </a>
 </div>
 
 
 <div class="next">
-<a href="/2016/04/26/hexo-5/"  title="hexo post">
+<a href="/2016/04/27/prototype/"  title="prototype">
  <strong>下一篇：</strong><br/> 
- <span>hexo post
+ <span>prototype
 </span>
 </a>
 </div>
@@ -157,7 +167,7 @@
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
  
- <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#hexo-使用"><span class="toc-number">1.</span> <span class="toc-text">hexo 使用</span></a></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#constructor-NaN"><span class="toc-number">1.</span> <span class="toc-text">constructor</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#用法：判断给定对象为什么类"><span class="toc-number">2.</span> <span class="toc-text">用法：判断给定对象为什么类</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#不足"><span class="toc-number">2.0.1.</span> <span class="toc-text">不足</span></a></li></ol></li></ol></li></ol>
  
   </div>
 
@@ -176,15 +186,11 @@
 		<ul class="clearfix">
 		
 			
-				<li><a href="/tags/hexo/" title="hexo">hexo<sup>5</sup></a></li>
-			
-		
-			
 				<li><a href="/tags/js/" title="js">js<sup>5</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/css/" title="css">css<sup>5</sup></a></li>
+				<li><a href="/tags/hexo/" title="hexo">hexo<sup>1</sup></a></li>
 			
 		
 		</ul>
@@ -229,7 +235,7 @@
 	 
 	<div class="social-font" class="clearfix">
 		
-		<a href="http://weibo.com/2176287895" target="_blank" class="icon-weibo" title="微博"></a>
+		<a href="http://weibo.com/2177109233" target="_blank" class="icon-weibo" title="微博"></a>
 		
 		
 		
