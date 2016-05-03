@@ -70,7 +70,7 @@
 						<li>Tags</li>
 						
 						
-						<li>About</li>
+						<li>Über</li>
 						
 					</ul>
 				</div>
@@ -174,6 +174,68 @@
 </nav>
 
       <div class="body-wrap">
+  
+    <article id="post-call-apply-caller-callee" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/05/03/call-apply-caller-callee/" class="article-date">
+  	<time datetime="2016-05-03T04:11:00.000Z" itemprop="datePublished">2016-05-03</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/05/03/call-apply-caller-callee/">call,apply,caller,callee</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="call"><a href="#call" class="headerlink" title="call"></a>call</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">a</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> slice = [].slice; <span class="comment">//数组对象的slice方法，数组实例对象才有slice方法(不过Firefox在Array上也实现了它，不过用法有所不同所以，也可以用Array.prototype.call(arguments, 1)</span></span><br><span class="line">    <span class="keyword">var</span> args = slice.call(<span class="built_in">arguments</span>, <span class="number">1</span>); <span class="comment">//本来arguments对象是没有slice方法的，于是通过call强行调用</span></span><br><span class="line">    <span class="built_in">console</span>.log(args);</span><br><span class="line">&#125;</span><br><span class="line">a（<span class="number">1</span>， <span class="number">2</span>， <span class="number">3</span>）；</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">c</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="built_in">Object</span>.getOwnPropertyNames(<span class="built_in">arguments</span>)); <span class="comment">//[length, callee]，各个浏览器实现一致</span></span><br><span class="line">  <span class="built_in">console</span>.log(<span class="built_in">Object</span>.prototype.toString.call(<span class="built_in">arguments</span>)); <span class="comment">// [object arguments]</span></span><br><span class="line">  <span class="keyword">var</span> args = <span class="built_in">arguments</span>.slice(<span class="number">1</span>); <span class="comment">//会报错，arguments根本就没有这个方法</span></span><br><span class="line">  <span class="built_in">console</span>.log(args);</span><br><span class="line">&#125;</span><br><span class="line">c(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//Firefox里面Array实现了slice函数，接受含有length属性的参数1，和位置参数)</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">b</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> args = <span class="built_in">Array</span>.slice(<span class="built_in">arguments</span>, <span class="number">1</span>, <span class="number">2</span>);</span><br><span class="line">  <span class="built_in">console</span>.log(args);</span><br><span class="line">&#125;</span><br><span class="line">b(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">//如果这样用呢</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">b</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> args = <span class="built_in">Array</span>.slice.call(<span class="built_in">arguments</span>,  [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>], <span class="number">1</span>, <span class="number">3</span>); <span class="comment">//其实也就是使用arguments调用了Array.slice,但业务上和arguments没有半毛钱关系</span></span><br><span class="line">  <span class="built_in">console</span>.log(args); <span class="comment">// [2, 3]</span></span><br><span class="line">&#125;</span><br><span class="line">b(); <span class="comment">//执行b(6, 5, 3, 2);结果也是一样的，因为根本就不是对arguments切片</span></span><br></pre></td></tr></table></figure>
+<h2 id="apply"><a href="#apply" class="headerlink" title="apply"></a>apply</h2><h2 id="caller"><a href="#caller" class="headerlink" title="caller"></a>caller</h2><p>Function.prototype上的属性，所有函数实例都有这个属性<br>caller返回调用当前正在执行的函数的函数的引用，如果是顶层调用（即没有上层函数调用），则为null，或者函数没有执行时，打印函数的该属性也返回null<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(a.caller);</span><br><span class="line">    <span class="built_in">console</span>.log(a.caller === b);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> b= <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    a();</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(a.caller); <span class="comment">// null</span></span><br><span class="line">a(); <span class="comment">// null; false</span></span><br><span class="line">b(); <span class="comment">// function b; true</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="callee"><a href="#callee" class="headerlink" title="callee"></a>callee</h2><p>callee返回正在执行的函数本身的引用，它是arguments的一个属性，call代码里面有提到<br>多被用来作递归操作。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> sum = <span class="function"><span class="keyword">function</span> (<span class="params">n</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (n &lt;= <span class="number">0</span>)</span><br><span class="line">    <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">  <span class="keyword">else</span></span><br><span class="line">    <span class="keyword">return</span> n + <span class="built_in">arguments</span>.callee(n - <span class="number">1</span>);</span><br><span class="line">&#125;</span><br><span class="line">sum(<span class="number">10</span>);</span><br></pre></td></tr></table></figure></p>
+<p>另外，arguments.callee.length表示函数的形参长度；arguments.length代表实参长度，即真正传进来的参数个数<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">num</span>(<span class="params">a, b, c</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="built_in">arguments</span>.length); <span class="comment">//5</span></span><br><span class="line">    <span class="built_in">console</span>.log(<span class="built_in">arguments</span>.callee.length); <span class="comment">//3</span></span><br><span class="line">&#125;</span><br><span class="line">num(<span class="number">1</span>, <span class="number">3</span>, <span class="number">5</span>, <span class="number">7</span>, <span class="number">9</span>);</span><br></pre></td></tr></table></figure></p>
+<h2 id="严格模式下，caller-callee都不可用"><a href="#严格模式下，caller-callee都不可用" class="headerlink" title="严格模式下，caller, callee都不可用"></a>严格模式下，caller, callee都不可用</h2>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
   
     <article id="post-new-function" class="article article-type-post" itemscope itemprop="blogPost">
   
@@ -390,70 +452,6 @@
 <ul>
 <li>不足<br>1.页面多个框架页面中，创建的两个数组继承自两个完全相同却相互独立的原型对象，因而其中一个框架页面中的数组对象不是另外一个框架页面中Array()构造函数的实例。（instanceof也如此)<br>2.此外，不是每个实例都有constructor属性，该属性是继承自原型对象，原型对象可能没有该属性。或者，实例原型更改后并没有指向正确的构造函数，导致不正确。</li>
 </ul>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
-	</div>
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-prototype" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/04/21/prototype/" class="article-date">
-  	<time datetime="2016-04-21T07:42:20.000Z" itemprop="datePublished">2016-04-21</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/04/21/prototype/">prototype</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="var-a-new-Object"><a href="#var-a-new-Object" class="headerlink" title="var a = new Object();"></a>var a = new Object();</h2><ul>
-<li>Object, 即构造函数， 是函数。<code>typeof Object == &#39;function&#39; ;//true</code></li>
-<li>Object.prototype, 即Object的原型， 是对象。<code>typeof Object.prototype == &#39;object&#39;;//true</code></li>
-</ul>
-<h2 id="只有函数才有prototype属性，prototype-原型"><a href="#只有函数才有prototype属性，prototype-原型" class="headerlink" title="只有函数才有prototype属性，prototype != 原型"></a>只有函数才有prototype属性，prototype != 原型</h2><p>构造函数的prototype并不是构造函数的原型，只有<code>Function.__proto__</code>才能代表原型（<code>Function.__proto__</code>就是Function构造函数的原型),Function.prototype是用构造函数构造出来的实例对象的原型，</p>
-<p>原型构成了原型链，原型链的根就是Object.prototype。根的原型为null<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Object</span>.prototype.__proto__;<span class="comment">//null</span></span><br></pre></td></tr></table></figure></p>
-<h2 id="proto"><a href="#proto" class="headerlink" title="proto"></a><strong>proto</strong></h2><p>实现了ecma-262中的 <code>[[Prototype]]</code> ,这是一个内置属性，不可操作，每个实例对象内部都有，指向该对象的原型。<br>通常不建议使用 <code>__proto__</code> 。只有一个地方建议：使用class时，直接定义 <code>__proto__</code> 属性。<br>不过，用来理解原型还是不错的</p>
-<h2 id="原型获取和设置"><a href="#原型获取和设置" class="headerlink" title="原型获取和设置"></a>原型获取和设置</h2><p>可以使用<code>Object.getPrototypeOf()</code>和<code>Object.setPrototypeOf()</code>来获取和设置对象的原型。</p>
 
       
     </div>
